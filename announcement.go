@@ -46,7 +46,3 @@ func (a *Announcement) Pack(intent Intent, operation OperationType) (*Message, e
 func (a *Announcement) Unpack(msg Message) error {
 	return json.Unmarshal(msg.Data, a)
 }
-
-/*func (a *Announcement) UnmarshalJSON(b []byte) error {
-	return json.Unmarshal(b, a)
-}*/

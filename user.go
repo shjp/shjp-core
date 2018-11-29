@@ -11,9 +11,11 @@ import (
 type User struct {
 	ID            string  `json:"id"`
 	Name          *string `json:"name"`
+	Email         *string `json:"email"`
+	Password      *string `json:"password"`
 	BaptismalName *string `json:"baptismal_name"`
 	Birthday      *string `json:"birthday"`
-	FeastDay      *string `json:"feast_day"`
+	Feastday      *string `json:"feast_day"`
 	Created       *string `json:"created"`
 	LastActive    *string `json:"last_active"`
 }
@@ -49,7 +51,3 @@ func (u *User) Pack(intent Intent, operation OperationType) (*Message, error) {
 func (u *User) Unpack(msg Message) error {
 	return json.Unmarshal(msg.Data, u)
 }
-
-/*func (u *User) UnmarshalJSON(b []byte) error {
-	return json.Unmarshal(b, u)
-}*/

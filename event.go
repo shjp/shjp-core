@@ -53,7 +53,3 @@ func (e *Event) Pack(intent Intent, operation OperationType) (*Message, error) {
 func (e *Event) Unpack(msg Message) error {
 	return json.Unmarshal(msg.Data, e)
 }
-
-/*func (e *Event) UnmarshalJSON(b []byte) error {
-	return json.Unmarshal(b, e)
-}*/
