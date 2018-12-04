@@ -12,7 +12,9 @@ type User struct {
 	ID            string  `json:"id"`
 	Name          *string `json:"name"`
 	Email         *string `json:"email"`
-	Password      *string `json:"password"`
+	Password      *string `json:"password" sql:"-"`
+	AccountType   *string `json:"account_type"`
+	AccountSecret *string `json:"account_secret"`
 	BaptismalName *string `json:"baptismal_name"`
 	Birthday      *string `json:"birthday"`
 	Feastday      *string `json:"feastday"`
