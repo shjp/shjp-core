@@ -15,7 +15,7 @@ type User struct {
 	Password      *string `json:"password"`
 	BaptismalName *string `json:"baptismal_name"`
 	Birthday      *string `json:"birthday"`
-	Feastday      *string `json:"feast_day"`
+	Feastday      *string `json:"feastday"`
 	Created       *string `json:"created"`
 	LastActive    *string `json:"last_active"`
 }
