@@ -7,6 +7,9 @@ const (
 	// ModelType indicates a message transporting a model info
 	ModelType MessageType = "model"
 
+	// Relationship indicates a message transporting a relationship info
+	RelationshipType MessageType = "relationship"
+
 	// FileType indicates a message transporting a file info
 	FileType MessageType = "file"
 
