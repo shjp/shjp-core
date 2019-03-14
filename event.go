@@ -2,6 +2,7 @@ package core
 
 import (
 	"encoding/json"
+	"time"
 
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
@@ -9,17 +10,20 @@ import (
 
 // Event is the event model
 type Event struct {
-	ID                  string   `json:"id"`
-	Name                string   `json:"name"`
-	Date                *string  `json:"date"`
-	Length              int      `json:"length"`
-	Creator             *string  `json:"creator"`
-	Deadline            *string  `json:"deadline"`
-	AllowMaybe          bool     `json:"allow_maybe"`
-	Description         string   `json:"description"`
-	Location            *string  `json:"location"`
-	LocationDescription *string  `json:"location_description"`
-	GroupIDs            []string `json:"group_ids" sql:"-"`
+	ID                  string     `json:"id"`
+	Name                string     `json:"name"`
+	Start               *string    `json:"start"`
+	End                 *string    `json:"end"`
+	Creator             *string    `json:"creator"`
+	Deadline            *string    `json:"deadline"`
+	AllowMaybe          bool       `json:"allow_maybe"`
+	Description         string     `json:"description"`
+	Location            *string    `json:"location"`
+	LocationDescription *string    `json:"location_description"`
+	Created             *time.Time `json:"created"`
+	Updated             *time.Time `json:"updated"`
+
+	GroupIDs []string `json:"group_ids" sql:"-"`
 }
 
 // GetID returns the ID field

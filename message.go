@@ -51,6 +51,8 @@ func (m *Message) ExtractEntity() (Entity, error) {
 		entity = &Announcement{}
 	case "event":
 		entity = &Event{}
+	case "event_rsvp":
+		entity = &EventRSVP{}
 	case "group":
 		entity = &Group{}
 	case "group_membership":

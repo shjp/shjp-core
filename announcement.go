@@ -2,6 +2,7 @@ package core
 
 import (
 	"encoding/json"
+	"time"
 
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
@@ -9,10 +10,12 @@ import (
 
 // Announcement is the announcement data model
 type Announcement struct {
-	ID       string `json:"id"`
-	Name     string `json:"name"`
-	AuthorID string `json:"authorId"`
-	Content  string `json:"content"`
+	ID       string     `json:"id"`
+	Name     string     `json:"name"`
+	AuthorID string     `json:"authorId"`
+	Content  string     `json:"content"`
+	Created  *time.Time `json:"created"`
+	Updated  *time.Time `json:"updated"`
 }
 
 // GetID returns the ID field
