@@ -16,7 +16,7 @@ type Event struct {
 	End                 *string    `json:"end"`
 	Creator             *string    `json:"creator"`
 	Deadline            *string    `json:"deadline"`
-	AllowMaybe          bool       `json:"allow_maybe"`
+	AllowMaybe          bool       `json:"allow_maybe" sql:",notnull"`
 	Description         string     `json:"description"`
 	Location            *string    `json:"location"`
 	LocationDescription *string    `json:"location_description"`

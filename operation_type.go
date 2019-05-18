@@ -1,20 +1,13 @@
 package core
 
+// OperationType is the enum type for operation type that message conveys
 type OperationType string
 
+// Operation types
 const (
-	// UpsertOperation indicates an intent to upsert
-	UpsertOperation = "upsert"
-
-	// CreateOperation indicates an intent to create
-	CreateOperation = "create"
-
-	// UpdateOperation indicates an intent to update
-	UpdateOperation = "update"
-
-	// DeleteOperation indicates an intent to delete
-	DeleteOperation = "delete"
-
-	// UnknownOperation indicates an unknown operation
+	UpsertOperation  = "upsert"
+	CreateOperation  = "create"
+	UpdateOperation  = "update"
+	DeleteOperation  = "delete"
 	UnknownOperation = "unknown"
 )

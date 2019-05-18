@@ -3,16 +3,10 @@ package core
 // MessageType is types of operations
 type MessageType string
 
+// Message types that indicate the type of entity a message is transporting
 const (
-	// ModelType indicates a message transporting a model info
-	ModelType MessageType = "model"
-
-	// Relationship indicates a message transporting a relationship info
+	ModelType        MessageType = "model"
 	RelationshipType MessageType = "relationship"
-
-	// FileType indicates a message transporting a file info
-	FileType MessageType = "file"
-
-	// UnknownType indicates a message whose content could not be determined
-	UnknownType MessageType = "unknown"
+	FileType         MessageType = "file"
+	UnknownType      MessageType = "unknown"
 )
