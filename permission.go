@@ -20,6 +20,7 @@ type GroupPermission struct {
 	CanWriteComments      bool `json:"can_write_comments"`
 	CanWriteAnnouncements bool `json:"can_write_announcements"`
 	CanWriteEvents        bool `json:"can_write_events"`
+	CanAdminGroup         bool `json:"can_admin_group"`
 	CanEditUsers          bool `json:"can_edit_users"`
 }
 
@@ -32,6 +33,7 @@ func MapGroupPermission(priv int) GroupPermission {
 		CanWriteComments:      priv&PermissionCommentModerate != 0,
 		CanWriteAnnouncements: priv&PermissionAnnouncementModerate != 0,
 		CanWriteEvents:        priv&PermissionEventModerate != 0,
+		CanAdminGroup:         priv&PermissionAdmin != 0,
 		CanEditUsers:          priv&PermissionSuper != 0,
 	}
 }
