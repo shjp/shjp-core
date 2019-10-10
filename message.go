@@ -57,6 +57,8 @@ func (m *Message) ExtractEntity() (Entity, error) {
 		entity = &Group{}
 	case "group_membership":
 		entity = &GroupMembership{}
+	case "role":
+		entity = &Role{}
 	case "user":
 		entity = &User{}
 	default:
