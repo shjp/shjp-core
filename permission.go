@@ -37,3 +37,40 @@ func MapGroupPermission(priv int) GroupPermission {
 		CanEditUsers:          priv&PermissionSuper != 0,
 	}
 }
+
+// GroupPermissionToPrivilege converts the group permission object to privilege bit
+func GroupPermissionToPrivilege(p GroupPermission) int {
+	priv := 0
+	if p.CanEditUsers {
+		priv++
+	}
+	priv *= 2
+	if p.CanAdminGroup {
+		priv++
+	}
+	priv *= 2
+	if p.CanWriteEvents {
+		priv++
+	}
+	priv *= 2
+	if p.CanWriteAnnouncements {
+		priv++
+	}
+	priv *= 2
+	if p.CanWriteComments {
+		priv++
+	}
+	priv *= 2
+	if p.CanReadComments {
+		priv++
+	}
+	priv *= 2
+	if p.CanReadMembers {
+		priv++
+	}
+	priv *= 2
+	if p.CanRead {
+		priv++
+	}
+	return priv
+}
