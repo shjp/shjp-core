@@ -5,6 +5,6 @@ import (
 )
 
 // MassFile is the mass file model
-type Role struct {
+type MassFile struct {
 	core.MassFile
 }
